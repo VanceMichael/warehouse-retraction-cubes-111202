@@ -1,0 +1,1 @@
+SCHEMA = {'plays': 'event_id TEXT PRIMARY KEY, day TEXT NOT NULL, author TEXT NOT NULL, channel TEXT NOT NULL, viewer TEXT NOT NULL, seconds INTEGER NOT NULL'}
