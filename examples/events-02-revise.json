@@ -1,0 +1,8 @@
+{
+  "events": [
+    {"event_id": "e1", "revision": 1, "op": "upsert", "day": "2026-10-02", "author": "a1", "channel": "c1", "viewer": "u1", "seconds": 15},
+    {"event_id": "e2", "revision": 1, "op": "upsert", "day": "2026-10-05", "author": "a1", "channel": "c2", "viewer": "u1", "seconds": 30},
+    {"event_id": "e3", "revision": 1, "op": "upsert", "day": "2026-10-01", "author": "a1", "channel": "c1", "viewer": "u1", "seconds": 25},
+    {"event_id": "e4", "revision": 1, "op": "delete"}
+  ]
+}

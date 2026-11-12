@@ -1,9 +1,117 @@
-[
-  {
-    "day": "2026-10-01",
-    "channel": "c1",
-    "plays": 2,
-    "viewers": 1,
-    "total_seconds": 40
-  }
-]
+{
+  "daily_author": [
+    {
+      "author": "a1",
+      "avg_seconds": "25.000000",
+      "day": "2026-10-01",
+      "plays": 1,
+      "total_seconds": 25,
+      "version": 2,
+      "viewers": 1
+    },
+    {
+      "author": "a2",
+      "avg_seconds": "50.000000",
+      "day": "2026-10-01",
+      "plays": 1,
+      "total_seconds": 50,
+      "version": 3,
+      "viewers": 1
+    },
+    {
+      "author": "a1",
+      "avg_seconds": "15.000000",
+      "day": "2026-10-02",
+      "plays": 1,
+      "total_seconds": 15,
+      "version": 3,
+      "viewers": 1
+    },
+    {
+      "author": "a1",
+      "avg_seconds": "35.000000",
+      "day": "2026-10-05",
+      "plays": 2,
+      "total_seconds": 70,
+      "version": 2,
+      "viewers": 1
+    }
+  ],
+  "daily_channel": [
+    {
+      "avg_seconds": "25.000000",
+      "channel": "c1",
+      "day": "2026-10-01",
+      "plays": 1,
+      "total_seconds": 25,
+      "version": 2,
+      "viewers": 1
+    },
+    {
+      "avg_seconds": "50.000000",
+      "channel": "c2",
+      "day": "2026-10-01",
+      "plays": 1,
+      "total_seconds": 50,
+      "version": 3,
+      "viewers": 1
+    },
+    {
+      "avg_seconds": "15.000000",
+      "channel": "c1",
+      "day": "2026-10-02",
+      "plays": 1,
+      "total_seconds": 15,
+      "version": 3,
+      "viewers": 1
+    },
+    {
+      "avg_seconds": "40.000000",
+      "channel": "c1",
+      "day": "2026-10-05",
+      "plays": 1,
+      "total_seconds": 40,
+      "version": 1,
+      "viewers": 1
+    },
+    {
+      "avg_seconds": "30.000000",
+      "channel": "c2",
+      "day": "2026-10-05",
+      "plays": 1,
+      "total_seconds": 30,
+      "version": 2,
+      "viewers": 1
+    }
+  ],
+  "publish_version": 3,
+  "weekly_author": [
+    {
+      "author": "a1",
+      "avg_seconds": "20.000000",
+      "plays": 2,
+      "total_seconds": 40,
+      "version": 3,
+      "viewers": 2,
+      "week": "2026-W40"
+    },
+    {
+      "author": "a2",
+      "avg_seconds": "50.000000",
+      "plays": 1,
+      "total_seconds": 50,
+      "version": 3,
+      "viewers": 1,
+      "week": "2026-W40"
+    },
+    {
+      "author": "a1",
+      "avg_seconds": "35.000000",
+      "plays": 2,
+      "total_seconds": 70,
+      "version": 2,
+      "viewers": 1,
+      "week": "2026-W41"
+    }
+  ]
+}

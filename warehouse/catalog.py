@@ -4,7 +4,7 @@ import sqlite3
 from contextlib import contextmanager
 from pathlib import Path
 
-from .definition import SCHEMA
+from .definition import INDEXES, SCHEMA
 
 
 def encode(value):
@@ -16,8 +16,12 @@ def connect(path):
     connection.row_factory = sqlite3.Row
     connection.execute('PRAGMA foreign_keys=ON')
     connection.execute('PRAGMA busy_timeout=5000')
-    for table, columns in SCHEMA.items():
-        connection.execute(f'CREATE TABLE IF NOT EXISTS "{table}" ({columns})')
+    # 断电后依赖 WAL 回放与事务原子性：未提交的进度不会落库
+    connection.execute('PRAGMA journal_mode=WAL')
+    for statement in SCHEMA.values():
+        connection.execute(statement)
+    for statement in INDEXES.values():
+        connection.execute(statement)
     connection.execute('CREATE TABLE IF NOT EXISTS ingest_batches (batch TEXT PRIMARY KEY, digest TEXT NOT NULL, rows INTEGER NOT NULL)')
     return connection
 
@@ -35,6 +39,7 @@ def transaction(connection):
 
 
 def load_bundle(connection, bundle, batch):
+    """通用关系装载（保留给测试与外部工具）。业务事件请走 domain.publish_bundle。"""
     if not isinstance(bundle, dict) or not isinstance(batch, str) or not batch:
         raise ValueError('输入需要命名数据集合与批次标识')
     if set(bundle) - set(SCHEMA):

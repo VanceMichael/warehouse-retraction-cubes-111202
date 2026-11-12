@@ -1,3 +1,11 @@
 {
-  "plays": "event_id TEXT PRIMARY KEY, day TEXT NOT NULL, author TEXT NOT NULL, channel TEXT NOT NULL, viewer TEXT NOT NULL, seconds INTEGER NOT NULL"
+  "play_events": "event_id TEXT NOT NULL, revision INTEGER NOT NULL, op TEXT NOT NULL, day TEXT, author TEXT, channel TEXT, viewer TEXT, seconds INTEGER, content_hash TEXT NOT NULL, batch TEXT NOT NULL, PRIMARY KEY (event_id, revision)",
+  "play_current": "event_id TEXT PRIMARY KEY, revision INTEGER NOT NULL, status TEXT NOT NULL, day TEXT, author TEXT, channel TEXT, viewer TEXT, seconds INTEGER",
+  "event_audit": "id INTEGER PRIMARY KEY AUTOINCREMENT, event_id TEXT NOT NULL, revision INTEGER NOT NULL, reason TEXT NOT NULL, content_hash TEXT NOT NULL, batch TEXT NOT NULL, detail TEXT NOT NULL, created_at TEXT NOT NULL",
+  "contributions": "event_id TEXT NOT NULL, grain TEXT NOT NULL, dim1 TEXT NOT NULL, dim2 TEXT NOT NULL, viewer TEXT NOT NULL, seconds INTEGER NOT NULL, revision INTEGER NOT NULL, version INTEGER NOT NULL, PRIMARY KEY (event_id, grain)",
+  "dws_daily_channel": "day TEXT NOT NULL, channel TEXT NOT NULL, plays INTEGER NOT NULL, viewers INTEGER NOT NULL, total_seconds INTEGER NOT NULL, version INTEGER NOT NULL, PRIMARY KEY (day, channel)",
+  "dws_daily_author": "day TEXT NOT NULL, author TEXT NOT NULL, plays INTEGER NOT NULL, viewers INTEGER NOT NULL, total_seconds INTEGER NOT NULL, version INTEGER NOT NULL, PRIMARY KEY (day, author)",
+  "dws_weekly_author": "week TEXT NOT NULL, author TEXT NOT NULL, plays INTEGER NOT NULL, viewers INTEGER NOT NULL, total_seconds INTEGER NOT NULL, version INTEGER NOT NULL, PRIMARY KEY (week, author)",
+  "publish_log": "version INTEGER PRIMARY KEY, batch TEXT NOT NULL, created_at TEXT NOT NULL, changes INTEGER NOT NULL, replays INTEGER NOT NULL, conflicts INTEGER NOT NULL, stale INTEGER NOT NULL",
+  "publish_entries": "version INTEGER NOT NULL, event_id TEXT NOT NULL, action TEXT NOT NULL, old_revision INTEGER, new_revision INTEGER NOT NULL, detail TEXT NOT NULL, PRIMARY KEY (version, event_id)"
 }

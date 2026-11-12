@@ -1,20 +1,9 @@
 {
-  "plays": [
-    {
-      "event_id": "p1",
-      "day": "2026-10-01",
-      "author": "a1",
-      "channel": "c1",
-      "viewer": "u1",
-      "seconds": 10
-    },
-    {
-      "event_id": "p2",
-      "day": "2026-10-01",
-      "author": "a1",
-      "channel": "c1",
-      "viewer": "u1",
-      "seconds": 30
-    }
+  "events": [
+    {"event_id": "e1", "revision": 0, "op": "upsert", "day": "2026-10-01", "author": "a1", "channel": "c1", "viewer": "u1", "seconds": 10},
+    {"event_id": "e2", "revision": 0, "op": "upsert", "day": "2026-10-01", "author": "a1", "channel": "c1", "viewer": "u1", "seconds": 30},
+    {"event_id": "e3", "revision": 0, "op": "upsert", "day": "2026-10-01", "author": "a1", "channel": "c1", "viewer": "u2", "seconds": 20},
+    {"event_id": "e4", "revision": 0, "op": "upsert", "day": "2026-10-01", "author": "a2", "channel": "c2", "viewer": "u3", "seconds": 50},
+    {"event_id": "e5", "revision": 0, "op": "upsert", "day": "2026-10-05", "author": "a1", "channel": "c1", "viewer": "u1", "seconds": 40}
   ]
 }
